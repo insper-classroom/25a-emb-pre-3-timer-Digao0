@@ -8,7 +8,7 @@ const int LED_PIN_R = 4;
 volatile int flag_f_r = 0;
 volatile bool longo = false;
 volatile bool apertado = false;
-alarm_id_t press_timer_id = 0;
+volatile alarm_id_t press_timer_id = 0;
 
 int64_t press_timer_callback(alarm_id_t id, void *user_data) {
     if (apertado) {
