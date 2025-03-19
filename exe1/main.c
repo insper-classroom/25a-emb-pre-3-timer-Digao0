@@ -40,8 +40,10 @@ int main() {
     bool timer_running = false;   
 
     while (true) {
+        
 
         if (flag_f_r) {
+            //printf("%d\n", flag_f_r);
             flag_f_r = 0;
             if (timer_running){
                 cancel_repeating_timer(&timer);
