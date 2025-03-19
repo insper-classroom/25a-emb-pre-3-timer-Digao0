@@ -8,8 +8,7 @@ const int LED_PIN_R = 4;
 
 volatile int flag_f_r = 0;
 volatile int led_state = 0;
-repeating_timer_t timer;
-volatile bool timer_running = false;
+
 
 void btn_callback(uint gpio, uint32_t events) {
     if (events == 0x4) { // fall edge
@@ -36,6 +35,10 @@ int main() {
 
     gpio_set_irq_enabled_with_callback(BTN_PIN_R, GPIO_IRQ_EDGE_FALL, true,
                                        &btn_callback);
+
+
+    repeating_timer_t timer;
+    bool timer_running = false;   
 
     while (true) {
 
